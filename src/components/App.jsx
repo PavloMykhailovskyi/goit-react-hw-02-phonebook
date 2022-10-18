@@ -5,6 +5,8 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import css from './App.module.css'
 
+
+
 export class App extends Component {
   state = {
     contacts: [
@@ -26,8 +28,7 @@ export class App extends Component {
 
     const contactForList = { id: nanoid(4), ...data };
     this.setState(
-      prev => ({ contacts: [...prev.contacts, contactForList] }),
-      console.log(this.state)
+      prev => ({ contacts: [...prev.contacts, contactForList] })
     );
   };
 
@@ -47,6 +48,8 @@ export class App extends Component {
     this.setState(prev => ({contacts: prev.contacts.filter(contact => contact.id !== id)}))
   }
 
+
+  
   render() {
     return (
       <div className={css.container}>
